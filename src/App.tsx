@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       {counter.value}
+      {counter.value}
       <button onClick={() => dispatch(add())}>+1</button>
     </>
   );

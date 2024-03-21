@@ -11,7 +11,8 @@
     "eslint:fix": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "stylelint:fix": "stylelint --fix \"**/*.{css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",
@@ -42,14 +43,18 @@
     "unplugin-auto-import": "^0.17.5",
     "vite": "^5.2.0"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint"
+    }
+  },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts}": [
-      "npm run eslint:fix",
-      "git add ."
+      "npm run eslint:fix"
     ],
     "**/*.{scss,css,less}": [
-      "npm run stylelint:fix",
-      "git add ."
+      "npm run stylelint:fix"
     ]
   }
 }
