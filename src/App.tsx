@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { CounterState, add } from './store/counter';
+import { useDispatch, useSelector } from 'react-redux'
+import { CounterState, add } from './store/counter'
 
 function App() {
   const counter = useSelector<AppStore, CounterState>((state) => state.counter);
