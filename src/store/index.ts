@@ -5,6 +5,7 @@ import counter, { CounterState } from './counter.ts';
 declare global {
   interface AppStore {
     counter: CounterState;
+    asd?: number;
   }
 }
 
